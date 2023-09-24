@@ -1,0 +1,24 @@
+{{log userData.dataValues}}
+{{#each posts as |post|}}
+{{/each}}
+<article>
+
+  <form id="form" class="form addPost-form">
+      <label for="title-addPost" class="formTag">Title:</label>
+      <div class="form-group">
+        
+        <input class="form-input" type="text" id="title" />
+      </div>
+      <label for="description-addPost" class="formTag" >Description:</label>
+      <div class="form-group">
+        
+        <textarea class="form-input" type="description" id="description"></textarea>
+      </div>
+      <div class="form-bottom">
+        <button onclick="createPostsHandler()" class="btn btn-primary" id="save-post" type="submit">save</button>
+      </div>
+  </form>
+  <script src="/js/createPost.js"></script>
+
+
+</article>

@@ -1,0 +1,27 @@
+<div class="edit-post-container">
+    <h2>
+        Update Post
+    </h2>
+    <form class="edit-post-form">
+        <label for="title">
+            Title:
+        </label>
+        <br/>
+        <textarea id="title" name="title" rows="2" cols="30">
+            {{title}}
+        </textarea>
+        <br/>
+        <label for="description">
+            Description:
+        </label>
+        <br/>
+        <textarea id="description" name="description" rows="5" cols="30">
+            {{description}}
+        </textarea>
+        <br/>
+        <button type="submit" value="Submit">
+            Save
+        </button>
+    </form>
+</div>
+<script src="../public/js/editPost.js"></script>

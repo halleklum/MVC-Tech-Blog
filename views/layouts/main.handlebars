@@ -1,0 +1,67 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC Tech Blog</title>
+    <link rel="stylesheet" type="text/css" href="/css/jass.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  
+  </head>
+  <body>
+    <div class="flex-column justify-space-around">
+      <header class="main-header display-flex justify-space-between align-center p-2">
+        <div class="logo-container">
+            <p>{{format_date}}</p>
+        </div>
+       
+        <nav>
+          
+          <!-- Conditionally render login or logout links -->
+          {{log logged_in}}
+          {{#if logged_in}}
+           <div class="profile-container">
+            <button class="no-button" id="logout">logout</button>
+            <p>Hi {{userData.dataValues.username}}!</p>
+            
+          {{else}}
+            <a href="/login" class="profile"></a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class="container container-fluid mt-5">
+        <aside class="aside-bar" id="side-bar">
+            <div class="home-page hover">
+                <a href="/dashboard"><button type="home-page" class="aside-button">
+                </button></a>
+                <p>Home</p>
+            </div>
+           
+             <div class="hover">
+                <a href="/myposts"><button type="my-post" id="my-post" class="aside-button">
+                </button></a><p>My Posts</p>
+            </div>
+                <a href="dashboard/posts"><button type="add-post" id="add-post" class="aside-button">
+                </button></a>
+            </div>
+        </aside>
+        <div class="dashboard">
+        <!-- Render the sub layout -->
+          {{{body}}}
+        </div>
+      </main>
+      <footer>
+
+      </footer>
+    </div>
+
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  
+    </script>
+    
+  </body>
+
+</html>
