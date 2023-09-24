@@ -6,7 +6,7 @@ const userRouter = require('./userRouter');
 // const savedPostRoutes = require('./savedPostRoutes')
 
 router.use('/user', userRouter);
-router.use('/tasks', taskRoutes);
+router.use('/posts', postRoutes);
 
 // router.use('/savedPosts', savedPostRoutes);
 
