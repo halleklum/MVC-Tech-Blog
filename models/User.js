@@ -31,13 +31,11 @@ User.init(
     },
   },
   {
-    // hashing the password before it is created in database
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-      // Does the same thing as the beforeCreate with an updated password
       beforeUpdate: async (updatedUserData) => {
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;

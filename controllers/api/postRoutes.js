@@ -21,7 +21,7 @@ router.post('/',  withAuth, async (req,res) => {
 // update a post
 router.put('/:id', withAuth, async (req, res) => {
   try {
-    const editePost = await Posts.update(
+    const editPost = await Posts.update(
       {
         title: req.body.title,
         description: req.body.description,
@@ -34,7 +34,7 @@ router.put('/:id', withAuth, async (req, res) => {
         },
       }
     );
-    res.status(200).json(editePost);
+    res.status(200).json(editPost);
   } catch (err) {
     res.status(500).json(err);
   }
